@@ -21,4 +21,6 @@ public class Abspielgeraet {
   public void turnOff() {
     abspielgeraet.turnOff();
   }
+
+  public void skipTo(int trackId) { abspielgeraet.skipTo(trackId); }
 }
