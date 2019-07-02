@@ -1,6 +1,9 @@
 package bridge;
 
 public class KassettenSpieler implements IAbspielgeraetImplementierer {
+
+  private int trackId = 1;
+
   @Override
   public void readData(AbspielDaten daten) {
     System.out.println("Daten von Kassette lesen");
@@ -8,12 +11,19 @@ public class KassettenSpieler implements IAbspielgeraetImplementierer {
 
   @Override
   public void skipTo(int trackId) {
-    System.out.println("Springe zu Track #" + trackId);
+    if (trackId > 0) {
+      if (this.trackId < trackId) {
+        System.out.println("Spule vor zu Track #" + trackId);
+      } else {
+        System.out.println("Spule zurück zu Track #" + trackId);
+      }
+      this.trackId = trackId;
+    }
   }
 
   @Override
   public void play() {
-    System.out.println("Wiedergabe von Kassette");
+    System.out.println("Wiedergabe von Kassette: Track #" + trackId);
   }
 
   @Override

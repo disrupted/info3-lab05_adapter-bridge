@@ -3,6 +3,7 @@ package bridge;
 public class Abspielgeraet {
 
   IAbspielgeraetImplementierer abspielgeraet;
+  private int trackId = 1;
 
   public Abspielgeraet(IAbspielgeraetImplementierer abspielgeraet) {
     this.abspielgeraet = abspielgeraet;
